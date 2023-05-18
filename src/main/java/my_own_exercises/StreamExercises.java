@@ -1,9 +1,7 @@
 package my_own_exercises;
 
-
 import java.util.*;
 import java.util.stream.Collectors;
-
 public class StreamExercises {
 
     public static List<Integer> getPositivePowersOfTen(){
@@ -14,8 +12,19 @@ public class StreamExercises {
                 .collect(Collectors.toList());
     }
 
+    public static List<String> toUppercase(){
+        List<String> strings = new ArrayList<>(Arrays.asList("Hallo", "Welt", "Java", "Streams"));
+        return strings.stream().map(String::toUpperCase).toList();
+    }
+
+
+
+
+
     public static void main(String[] args) {
-        System.out.println(getPositivePowersOfTen());
+        //System.out.println(getPositivePowersOfTen()); //done
+        //System.out.println(toUppercase()); //done
+
     }
 
 }
