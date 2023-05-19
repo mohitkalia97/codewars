@@ -47,16 +47,21 @@ public class StreamExercises {
         return numbers.stream().map(num -> num*2).collect(Collectors.toList());
     }
 
-
-
+    public static long countWordsStartingWith(List<String> words, char letter) {
+        return words.stream()
+                .filter(firstLetter -> (firstLetter.startsWith(String.valueOf(letter))))
+                .count();
+    }
 
     public static void main(String[] args) {
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
         //System.out.println(getAverageAge("Alice")); //done
         //System.out.println(getLengthLongestWord()); // done
-        System.out.println(doubleEvenNumbers());
-
+        //System.out.println(doubleEvenNumbers()); // done
+        System.out.println(countWordsStartingWith(Arrays
+                .asList("apple", "banana", "orange", "kiwi", "pear", "b", "bongo"),
+                'b'));
     }
 
 }
