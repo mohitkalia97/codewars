@@ -33,6 +33,13 @@ public class StreamExercises {
                 .getAsDouble();
     }
 
+    public static int getLengthLongestWord(){
+        List<String> wordList = new ArrayList<>(Arrays.asList("apple", "banana", "orange", "kiwi", "pineapple"));
+        return wordList.stream()
+                .mapToInt(String::length)
+                .max()
+                .getAsInt();
+    }
 
 
 
@@ -40,7 +47,8 @@ public class StreamExercises {
     public static void main(String[] args) {
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
-        System.out.println(getAverageAge("Alice"));
+        //System.out.println(getAverageAge("Alice")); //done
+        System.out.println(getLengthLongestWord());
     }
 
 }
