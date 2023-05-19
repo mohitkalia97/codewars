@@ -41,6 +41,12 @@ public class StreamExercises {
                 .getAsInt();
     }
 
+    public static List<Integer> doubleEvenNumbers(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        return numbers.stream().map(num -> num*2).collect(Collectors.toList());
+    }
+
 
 
 
@@ -48,7 +54,9 @@ public class StreamExercises {
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
         //System.out.println(getAverageAge("Alice")); //done
-        System.out.println(getLengthLongestWord());
+        //System.out.println(getLengthLongestWord()); // done
+        System.out.println(doubleEvenNumbers());
+
     }
 
 }
