@@ -53,15 +53,30 @@ public class StreamExercises {
                 .count();
     }
 
+    public static List<String> getAllUniqueHobbies(List<Person> people){
+        return people.stream()
+                .flatMap(person -> person.getHobbies().stream()) // Flache die Hobbys zu einer einzigen Stream<String> ab
+                .distinct() // Entferne Duplikate
+                .sorted() // Sortiere die Hobbys
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
         //System.out.println(getAverageAge("Alice")); //done
         //System.out.println(getLengthLongestWord()); // done
         //System.out.println(doubleEvenNumbers()); // done
-        System.out.println(countWordsStartingWith(Arrays
-                .asList("apple", "banana", "orange", "kiwi", "pear", "b", "bongo"),
-                'b'));
+        //System.out.println(countWordsStartingWith(Arrays
+        //        .asList("apple", "banana", "orange", "kiwi", "pear", "b", "bongo"),
+        //        'b'));                            //done
+        List<Person> peopleList = Arrays.asList(
+                new Person("Alice", Arrays.asList("reading", "painting", "gardening")),
+                new Person("Bob", Arrays.asList("sports", "cooking", "gardening")),
+                new Person("Charlie", Arrays.asList("gardening", "traveling")),
+                new Person("David", Arrays.asList("reading", "photography"))
+        );
+        System.out.println(getAllUniqueHobbies(peopleList));
     }
 
 }
