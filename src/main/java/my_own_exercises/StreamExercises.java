@@ -61,7 +61,18 @@ public class StreamExercises {
                 .collect(Collectors.toList());
     }
 
-    public static void main(String[] args) {
+    public static class Calculator {
+        public int add(int a, int b) {
+            return a + b;
+        }
+        public double add(double a, double b) {
+            return a + b;
+        }
+    }
+
+
+
+    public void main(String[] args) {
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
         //System.out.println(getAverageAge("Alice")); //done
@@ -70,13 +81,17 @@ public class StreamExercises {
         //System.out.println(countWordsStartingWith(Arrays
         //        .asList("apple", "banana", "orange", "kiwi", "pear", "b", "bongo"),
         //        'b'));                            //done
-        List<Person> peopleList = Arrays.asList(
-                new Person("Alice", Arrays.asList("reading", "painting", "gardening")),
-                new Person("Bob", Arrays.asList("sports", "cooking", "gardening")),
-                new Person("Charlie", Arrays.asList("gardening", "traveling")),
-                new Person("David", Arrays.asList("reading", "photography"))
-        );
-        System.out.println(getAllUniqueHobbies(peopleList));
+        //List<Person> peopleList = Arrays.asList(
+        //       new Person("Alice", Arrays.asList("reading", "painting", "gardening")),
+        //       new Person("Bob", Arrays.asList("sports", "cooking", "gardening")),
+        //       new Person("Charlie", Arrays.asList("gardening", "traveling")),
+        //       new Person("David", Arrays.asList("reading", "photography"))
+        //);
+        //System.out.println(getAllUniqueHobbies(peopleList)); // done
+        Calculator c = new Calculator();
+        c.add(1,1);
+
+
     }
 
 }
