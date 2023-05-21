@@ -2,7 +2,11 @@ package my_own_exercises;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Collectors;
+
 public class StreamExercises {
+
+
 
     public static List<Integer> getPositivePowersOfTen(){
         List<Integer> numList= new ArrayList<>(Arrays.asList(1, -2, 3, -4, 5));
@@ -70,9 +74,29 @@ public class StreamExercises {
         }
     }
 
+    public static String getOldestPersonOlderThan25AgeDescByANameCapitalLettersUppercase(){
+        List<Person2> person2List = Arrays.asList(
+                new Person2("John", 30),
+                new Person2("Alice", 28),
+                new Person2("Bob", 32),
+                new Person2("Emily", 25),
+                new Person2("David", 35)
+        );
 
 
-    public void main(String[] args) {
+        return person2List.stream()
+                .filter(person -> person.getAge()>25)
+                .sorted((p1, p2)-> Integer.compare(p2.getAge(), p1.getAge()))
+                .map(Person2::getName)
+                .findFirst().toString();
+
+
+    }
+
+
+    public static void main(String[] args) {
+
+
         //System.out.println(getPositivePowersOfTen()); //done
         //System.out.println(toUppercase()); //done
         //System.out.println(getAverageAge("Alice")); //done
@@ -88,12 +112,11 @@ public class StreamExercises {
         //       new Person("David", Arrays.asList("reading", "photography"))
         //);
         //System.out.println(getAllUniqueHobbies(peopleList)); // done
-        Calculator c = new Calculator();
-        c.add(1,1);
+       /* Calculator c = new Calculator();
+        c.add(1,1);*/
 
-
+        System.out.println(getOldestPersonOlderThan25AgeDescByANameCapitalLettersUppercase()); // done
     }
-
 }
 
 

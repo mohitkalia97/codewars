@@ -32,9 +32,9 @@ public class FindOdd {
         }
         return 0;
     }
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         System.out.println(findOddInt(new int[]{1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1}));
-    }
+    }*/
 }
 
 
