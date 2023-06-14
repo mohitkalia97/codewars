@@ -1,6 +1,5 @@
 # codewars
 Daily CodeWars Katas
-Welcome to my GitHub repository!
 
 Every day, I take on a new challenge from CodeWars, an online platform that offers programming puzzles in various languages and levels of difficulty.
 In this space, you'll find solutions I have crafted in different programming languages. 
